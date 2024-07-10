@@ -7,3 +7,9 @@ for (let i = 0; i<256; i++) {
 }
 
 container.addEventListener("mouseover",(event) => { event.target.style.backgroundColor = "purple"}, false)
+
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", function () {
+    let canvasWidth = prompt("Enter the canvas width");
+    let canvasHeight = prompt("Enter the canvas height")
+});

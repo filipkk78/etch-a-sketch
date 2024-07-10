@@ -8,10 +8,16 @@ for (let i = 0; i<256; i++) {
 
 container.addEventListener("mouseover",(event) => { event.target.style.backgroundColor = "purple"}, false)
 
+let canvasWidth
+let canvasHeight
+
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", function () {
-    let canvasWidth = prompt("Enter the canvas width");
-    let canvasHeight = prompt("Enter the canvas height");
+    do {
+    alert("These two numbers mustn't exceed 100 in order to prevent crashes.");
+    canvasWidth = prompt("Enter the canvas width:");
+    canvasHeight = prompt("Enter the canvas height:"); 
+    } while (canvasHeight > 101 && canvasWidth > 101 || canvasHeight > 101 || canvasWidth > 101);
     generateCanvas(canvasWidth, canvasHeight);
 });
 

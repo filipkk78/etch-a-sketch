@@ -3,10 +3,20 @@ const container = document.querySelector("#container");
 for (let i = 0; i<256; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
-    container.appendChild(square);    
+    container.appendChild(square); 
 }
 
-container.addEventListener("mouseover",(event) => { event.target.style.backgroundColor = "purple"}, false)
+let randomNumber;
+function getRandomNumber(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    randomNumber = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
+    return randomNumber;
+}
+
+container.addEventListener("mouseover",(event) => { 
+    event.target.style.backgroundColor = `rgba(${getRandomNumber(1,255)}, ${getRandomNumber(1,255)}, ${getRandomNumber(1,255)})`
+}, false);
 
 let canvasDimensions;
 
